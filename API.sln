@@ -5,9 +5,7 @@ VisualStudioVersion = 16.0.32126.315
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "API", "API\API.csproj", "{E8B23C16-DABE-45C8-8B76-FCF3C19A977D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BelajarAPI", "BelajarAPI\BelajarAPI.csproj", "{1FA36FB2-06AB-42FE-8A35-E01D098F895C}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Client", "..\Client\Client.csproj", "{5EE39542-4984-4EEB-A7BC-B44E5948A990}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Client", "..\Client\Client.csproj", "{5EE39542-4984-4EEB-A7BC-B44E5948A990}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -19,10 +17,6 @@ Global
 		{E8B23C16-DABE-45C8-8B76-FCF3C19A977D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E8B23C16-DABE-45C8-8B76-FCF3C19A977D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E8B23C16-DABE-45C8-8B76-FCF3C19A977D}.Release|Any CPU.Build.0 = Release|Any CPU
-		{1FA36FB2-06AB-42FE-8A35-E01D098F895C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{1FA36FB2-06AB-42FE-8A35-E01D098F895C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{1FA36FB2-06AB-42FE-8A35-E01D098F895C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{1FA36FB2-06AB-42FE-8A35-E01D098F895C}.Release|Any CPU.Build.0 = Release|Any CPU
 		{5EE39542-4984-4EEB-A7BC-B44E5948A990}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{5EE39542-4984-4EEB-A7BC-B44E5948A990}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5EE39542-4984-4EEB-A7BC-B44E5948A990}.Release|Any CPU.ActiveCfg = Release|Any CPU
