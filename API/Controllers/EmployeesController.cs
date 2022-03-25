@@ -23,11 +23,19 @@ namespace API.Controllers
             this.employeeRepository = employeeRepository;
         }
 
-        [Authorize(Roles = "Director, Manager")]
+        //[Authorize(Roles = "Director, Manager")]
+        [AllowAnonymous]
         [HttpGet("masteremployees")]
         public ActionResult MasterEmployeeData()
         {
             return Ok(employeeRepository.MasterEmployeeData());
+        }
+
+        [AllowAnonymous]
+        [HttpGet("masteremployees/{nik}")]
+        public ActionResult MasterEmployeeData(string nik)
+        {
+            return Ok(employeeRepository.MasterEmployeeData(nik));
         }
 
         [HttpGet("TestCORS")]

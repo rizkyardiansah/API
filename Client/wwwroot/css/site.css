@@ -58,14 +58,143 @@ html {
   min-height: 100%;
 }
 
-body {
+/*body {*/
   /* Margin bottom by footer height */
-  margin-bottom: 60px;
+  /*margin-bottom: 100px;
+}*/
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 999;
 }
+
 .footer {
-  position: absolute;
+  position: relative;
   bottom: 0;
   width: 100%;
   white-space: nowrap;
-  line-height: 60px; /* Vertically center the text there */
+  /*line-height: 60px;*/ /* Vertically center the text there */
+  font-size: 12px;
+}
+
+/*making card form column*/
+.scroll-y {
+    height: 300px;
+    overflow-y: auto;
+}
+
+/*.card {
+    border: 1px solid black;
+    margin-bottom: 10px;
+    padding: 20px;
+    max-height: 200px;
+    overflow-y: hidden;
+}
+
+.card:hover {
+    background-color: #ddd;
+}*/
+
+.tab-view {
+    height: 300px;
+    border: 1px solid black;
+    margin-right: 20px;
+    overflow-y: auto;
+}
+
+.tab-view .placeholder {
+    line-height:260px;
+    text-align: center;
+    color : #aaa;
+}
+
+.tab-view h2 {
+    text-align: center;
+}
+
+.type-icon {
+    display: inline-block;
+    width: 50px;
+    margin-bottom: 4px;
+    border: 1px solid #a3a3a3;
+    border-radius: 4px;
+    border: 1px solid rgba(0,0,0,.2);
+    color: #fff;
+    font-size: .75rem;
+    line-height: 1.5rem;
+    text-align: center;
+    transition: opacity .4s;
+}
+
+.type-normal {
+    background-color: #aa9;
+}
+
+.type-fire {
+    background-color: #f42;
+}
+
+.type-water {
+    background-color: #39f;
+}
+
+.type-electric {
+    background-color: #fc3;
+}
+
+.type-grass {
+    background-color: #7c5;
+}
+
+.type-ice {
+    background-color: #6cf;
+}
+
+.type-fighting {
+    background-color: #b54;
+}
+
+.type-poison {
+    background-color: #a59;
+}
+
+.type-ground {
+    background-color: #db5;
+}
+
+.type-flying {
+    background-color: #89f;
+}
+
+.type-psychic {
+    background-color: #f59;
+}
+
+.type-bug {
+    background-color: #ab2;
+}
+
+.type-rock {
+    background-color: #ba6;
+}
+
+.type-ghost {
+    background-color: #66b;
+}
+
+.type-dragon {
+    background-color: #76e;
+}
+
+.type-dark {
+    background-color: #754;
+}
+
+.type-steel {
+    background-color: #aab;
+}
+
+.type-fairy {
+    background-color: #e9e;
 }

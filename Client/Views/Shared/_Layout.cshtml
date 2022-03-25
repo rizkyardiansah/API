@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - Client</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/jszip-2.5.0/dt-1.11.5/b-2.2.2/b-colvis-2.2.2/b-html5-2.2.2/b-print-2.2.2/datatables.min.css" />
+    <link rel="stylesheet" href="~/lib/font-awesome-4.7.0/css/font-awesome.min.css" />
+
     <link rel="stylesheet" href="~/css/site.css" />
 </head>
 <body>
@@ -24,25 +28,73 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Pokemon" asp-action="Index">Pokemon</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Employees" asp-action="Index">Employees</a>
+                        </li>
                     </ul>
                 </div>
             </div>
         </nav>
     </header>
     <div class="container">
-        <main role="main" class="pb-3">
+        <main role="main" class="pb-3 mt-5 mb-3">
             @RenderBody()
         </main>
     </div>
 
-    <footer class="border-top footer text-muted">
+    <footer class="border-top footer text-muted pb-1 pt-3">
         <div class="container">
-            &copy; 2022 - Client - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+            <div class="row">
+                <div class="col">
+                    <h6>Pages</h6>
+                    <ul>
+                        <li><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
+                        <li><a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a></li>
+                        <li><a asp-area="" asp-controller="Pokemon" asp-action="Index">Pokemon</a></li>
+                        <li><a asp-area="" asp-controller="Employees" asp-action="Index">Employees</a></li>
+                    </ul>
+                </div>
+                <div class="col">
+                    <h6>Contact</h6>
+                    <ul>
+                        <li><a href="https://mail.google.com" target="_blank">Email</a></li>
+                        <li><a href="https://www.facebook.com" target="_blank">Facebook</a></li>
+                        <li><a href="https://www.instagram.com" target="_blank">Instagram</a></li>
+                        <li><a href="https://www.twitter.com" target="_blank">Twitter</a></li>
+                    </ul>
+                </div>
+                <div class="col">
+                    <h6>Products</h6>
+                    <ul>
+                        <li>Text Editor</li>
+                        <li>Integrated Development Environment</li>
+                        <li>File Manager</li>
+                        <li>Photo Editor</li>
+                    </ul>
+                </div>
+                <div class="col">
+                    <h6>Services</h6>
+                    <ul>
+                        <li>SEO Optimization</li>
+                        <li>Cyber Security</li>
+                        <li>Web Development</li>
+                    </ul>
+                </div>
+            </div>
         </div>
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/pdfmake.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/vfs_fonts.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/v/dt/jszip-2.5.0/dt-1.11.5/b-2.2.2/b-colvis-2.2.2/b-html5-2.2.2/b-print-2.2.2/datatables.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
+    <script src="~/js/Pokemon.js" asp-append-version="true"></script>
+    <script src="~/js/Employees.js" asp-append-version="true"></script>
     @RenderSection("Scripts", required: false)
 </body>
 </html>

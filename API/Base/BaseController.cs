@@ -40,7 +40,7 @@ namespace API.Base
             return Ok(repository.Insert(entity));
         }
 
-        [HttpDelete]
+        [HttpDelete("{key}")]
         public ActionResult<Entity> Delete(Key key)
         {
             return Ok(repository.Delete(key));

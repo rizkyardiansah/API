@@ -1,0 +1,235 @@
+﻿
+@{
+    ViewData["Title"] = "Employees";
+    ViewData["Method"] = "Index";
+    ViewData["Url"] = "/employees/index";
+    Layout = "_LayoutAdmin";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-6">
+            <div class="card">
+                <div class="card-header border-0">
+                    <div class="d-flex justify-content-between">
+                        <h3 class="card-title"># of Employees</h3>
+
+                    </div>
+                </div>
+                <div class="card-body">
+
+                    <div class="position-relative mb-4">
+                        <div id="genderChart"></div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="col-6">
+            <div class="card">
+                <div class="card-header border-0">
+                    <div class="d-flex justify-content-between">
+                        <h3 class="card-title">Universities Chart</h3>
+
+                    </div>
+                </div>
+                <div class="card-body">
+
+                    <div class="position-relative mb-4">
+                        <div id="universityChart"></div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        
+    </div>
+
+    <div class="row">
+        <div class="col">
+            <button class="btn btn-primary mb-3" data-toggle="modal" data-target="#employeeModal"><i class="fa fa-plus-circle" aria-hidden="true"></i> Employee</button>
+            <table id="employees-table" class="table table-bordered table-striped table-hover">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>NIK</th>
+                        <th>Name</th>
+                        @*<th>Gender</th>*@
+                        <th>Birthdate</th>
+                        <th>Email</th>
+                        <th>Phone Number</th>
+                        <th>University</th>
+                        <th>Degree</th>
+                        @*<th>GPA</th>*@
+                        <th>Salary</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+        
+    </div>
+</div>
+
+
+@*Modal for Add New Employee*@
+<div class="modal fade" id="employeeModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title text-capitalize" id="employeeModalTitle">Add Employee</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <form id="formEmployee">
+            <div class="modal-body">
+                    <div class="form-row">
+                        <div class="col form-group">
+                            <label for="firstName" class="font-weight-bold pl-2">First Name</label>
+                            <input type="text" name="firstName" id="firstName" class="form-control" required />
+                        </div>
+                        <div class="col form-group">
+                            <label for="lastName" class="font-weight-bold pl-2">Last Name</label>
+                            <input type="text" name="lastName" id="lastName" class="form-control" required />
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="col form-group">
+                            <label for="birthDate" class="font-weight-bold pl-2">Birthdate</label>
+                            <input type="date" name="birthDate" id="birthDate" class="form-control" required />
+
+                        </div>
+                        <div class="col form-group">
+                            <label class="font-weight-bold" for="gender">Gender</label>
+                            <div class="input-group" id="gender">
+                                <div class="form-check form-check-inline">
+                                    <input type="radio" class="form-check-input" name="gender" value="Male" id="genderMale" required/>
+                                    <label class="form-check-label" for="genderMale">Male</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input type="radio" class="form-check-input" name="gender" value="Female" id="genderFemale" />
+                                    <label class="form-check-label" for="genderFemale">Female</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="col form-group">
+                            <label for="phone" class="font-weight-bold pl-2">Phone Number</label>
+                            <input type="text" name="phone" id="phone" minlength="12" class="form-control" />
+                        </div>
+                        <div class="col form-group">
+                            <label for="email" class="font-weight-bold" pl-2">Email</label>
+                            <input type="email" name="email" id="email" class="form-control" required />
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="col form-group">
+                            <label for="universityId" class="font-weight-bold pl-2">University</label>
+                            <select id="universityId" name="universityId" class="form-control" required>
+                                
+                            </select>
+                        </div>
+                        <div class="col form-group">
+                            <label for="degree" class="font-weight-bold pl-2">Degree</label>
+                            <input type="text" name="degree" id="degree" class="form-control" required />
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="col form-group">
+                            <label for="gpa" class="font-weight-bold pl-2">GPA</label>
+                            <input type="text" name="gpa" id="gpa" class="form-control" required />
+                        </div>
+                        <div class="col form-group">
+                            <label for="salary" class="font-weight-bold pl-2">Salary</label>
+                            <input type="number" name="salary" id="salary" class="form-control" required />
+                        </div>
+                    </div>
+                
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="submit" class="btn btn-primary">Save changes</button>
+            </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+@*Modal for Edit Employee*@
+<div class="modal fade" id="employeeEditModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title text-capitalize" id="employeeEditModalTitle">Edit Employee</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <form id="formEditEmployee">
+                <div class="modal-body">
+                    <div class="form-row">
+                        <div class="col form-group">
+                            <label for="firstName" class="font-weight-bold pl-2">First Name</label>
+                            <input type="text" name="firstName" id="firstName" class="form-control" required />
+                            <small class="error-firstName"></small>
+                            <input type="hidden" name="nik" id="nik" />
+                        </div>
+                        <div class="col form-group">
+                            <label for="lastName" class="font-weight-bold pl-2">Last Name</label>
+                            <input type="text" name="lastName" id="lastName" class="form-control" required />
+                            <small class="error-lastName"></small>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="col form-group">
+                            <label for="birthDate" class="font-weight-bold pl-2">Birthdate</label>
+                            <input type="date" name="birthDate" id="birthDate" class="form-control" required />
+                            <small class="error-birthDate"></small>
+                        </div>
+                        <div class="col form-group">
+                            <label class="font-weight-bold" for="gender">Gender</label>
+                            <div class="input-group" id="gender">
+                                <div class="form-check form-check-inline">
+                                    <input type="radio" class="form-check-input" name="gender" value="Male" id="genderMale" required />
+                                    <label class="form-check-label" for="genderMale">Male</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input type="radio" class="form-check-input" name="gender" value="Female" id="genderFemale" required />
+                                    <label class="form-check-label" for="genderFemale">Female</label>
+                                </div>
+                            </div>
+                            <small class="error-gender"></small>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="col form-group">
+                            <label for="phone" class="font-weight-bold pl-2">Phone Number</label>
+                            <input type="text" name="phone" id="phone" class="form-control" />
+                            <small class="error-phone"></small>
+                        </div>
+                        <div class="col form-group">
+                            <label for="email" class="font-weight-bold" pl-2">Email</label>
+                            <input type="email" name="email" id="email" class="form-control" required />
+                            <small class="error-email"></small>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="col form-group">
+                            <label for="salary" class="font-weight-bold pl-2">Salary</label>
+                            <input type="number" name="salary" id="salary" class="form-control" required />
+                            <small class="error-salary"></small>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary">Save changes</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

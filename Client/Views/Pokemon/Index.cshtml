@@ -1,0 +1,134 @@
+﻿@{
+    ViewData["Title"] = "Latihan";
+}
+
+@*<div class="container mt-5">
+        <div class="row">
+            <div class="col tab-view">
+                <h2></h2>
+                <p></p>
+                <p class="placeholder">Pilih salah satu kolom</p>
+            </div>
+            <div class="col scroll-y">
+                <div class="row card">
+                    <div class="col">
+                        <h3>Kolom 1</h3>
+                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries.</p>
+                    </div>
+                </div>
+                <div class="row card">
+                    <div class="col">
+                        <h3>Kolom 2</h3>
+                        <p>The Show visual glyphs for Word Wrap option displays a return-arrow indicator where a long line wraps onto a second line. These reminder arrows are not added to your code; they are for display purposes only.</p>
+                    </div>
+                </div>
+                <div class="row card">
+                    <div class="col">
+                        <h3>Kolom 3</h3>
+                        <p>If you're familiar with word wrap in Notepad++, Sublime Text, or Visual Studio Code, be aware of the following issues where Visual Studio behaves differently to other editors</p>
+                    </div>
+                </div>
+                <div class="row card">
+                    <div class="col">
+                        <h3>Kolom 4</h3>
+                        <p>If you're familiar with word wrap in Notepad++, Sublime Text, or Visual Studio Code, be aware of the following issues where Visual Studio behaves differently to other editors >If you're familiar with word wrap in Notepad++, Sublime Text, or Visual Studio Code, be aware of the following issues where Visual Studio behaves differently to other editors >If you're familiar with word wrap in Notepad++, Sublime Text, or Visual Studio Code, be aware of the following issues where Visual Studio behaves differently to other Visual Studio behaves differently to other editors >If you're familiar with word wrap in Notepad++, Sublime Text, or Visual Studio Code, be aware of the following issues where Visual Studio behaves differently to other Visual Studio behaves differently to other editors >If you're familiar with word wrap in Notepad++, Sublime Text, or Visual Studio Code, be aware of the following issues where Visual Studio behaves differently to other editors</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>*@
+
+<table id="pokemon-table" class="table table-bordered table-striped table-hover">
+    <thead class="thead-dark">
+        <tr>
+            <th>No</th>
+            <th>Name</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+    </tbody>
+</table>
+
+<!-- Modal -->
+<div class="modal fade" id="pokemonModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title text-capitalize" id="pokemonModalTitle">Modal title</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-6">
+                        <div class="pokemon-types"></div>
+                        
+                        <div class="pokemon-images">
+                            <ul class="nav nav-tabs">
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-expanded="false">Male</a>
+                                    <div class="dropdown-menu">
+                                        <a class="dropdown-item" href="#male-front" onclick="showMaleFront()">Front</a>
+                                        <a class="dropdown-item" href="#male-back" onclick="showMaleBack()">Back</a>
+                                    </div>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-expanded="false">Female</a>
+                                    <div class="dropdown-menu">
+                                        <a class="dropdown-item" href="#female-front" onclick="showFemaleFront()">Front</a>
+                                        <a class="dropdown-item" href="#female-back" onclick="showFemaleBack()">Back</a>
+                                    </div>
+                                </li>
+                            </ul>
+                            <img style="width: 200px; height: 200px" id="male-front" />
+                            <img style="width: 200px; height: 200px" id="male-back" />
+                            <img style="width: 200px; height: 200px" id="female-front" />
+                            <img style="width: 200px; height: 200px" id="female-back" />
+                        </div>
+                        
+                        <div class="pokemon-abilities"></div>
+                    </div>
+                    <div class="col-6">
+                        <div class="pokemon-status">
+                            <h6>HP</h6>
+                            <div class="progress mb-2">
+                                <div class="progress-bar bg-success pokemon-hp" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="200">0</div>
+                            </div>
+
+                            <h6>Attack</h6>
+                            <div class="progress mb-2">
+                                <div class="progress-bar bg-danger pokemon-attack" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="200">0</div>
+                            </div>
+
+                            <h6>Defense</h6>
+                            <div class="progress mb-2">
+                                <div class="progress-bar bg-primary pokemon-defense" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="200">0</div>
+                            </div>
+
+                            <h6>Special Attack</h6>
+                            <div class="progress mb-2">
+                                <div class="progress-bar bg-secondary pokemon-special-attack" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="200">0</div>
+                            </div>
+
+                            <h6>Special Defense</h6>
+                            <div class="progress mb-2">
+                                <div class="progress-bar bg-info pokemon-special-defense" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="200">0</div>
+                            </div>
+
+                            <h6>Speed</h6>
+                            <div class="progress mb-2">
+                                <div class="progress-bar bg-warning pokemon-speed" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="200">0</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                @*<button type="button" class="btn btn-primary">Save changes</button>*@
+            </div>
+        </div>
+    </div>
+</div>
